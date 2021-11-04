@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+	</head>
+	<body>
+		<h1>{{ category.name }}</h1>
+		<p>{{ category.description }}</p>
+		{% for product in category.products %}
+			<h2>{{ product.name }}</h2>
+		{% endfor %}
+		<h3>
+			<a href="{{ path('categoryList') }}">Retourner à la liste de categories</a>
+		</h3>
+	</body>
+</html>
