@@ -1,0 +1,27 @@
+{{ form_start(categoryForm) }}
+
+<div class="flex">
+	<div class="containerForm">
+		{{ form_label(categoryForm, 'Nom du categorie', { 'attr': {'class': 'form'} }) }}
+		<br>
+		{{ form_widget(categoryForm.name) }}
+	</div>
+
+	<div class="containerForm">
+		{{ form_label(categoryForm, 'Description du categorie', { 'attr': {'class': 'form'} }) }}
+		<br>
+		{{ form_widget(categoryForm.description) }}
+	</div>
+</div>
+
+<div class="containerForm">
+
+	{{ form_widget(categoryForm.submit) }}
+</div>
+
+{{ form_end(categoryForm) }}
+<br>
+
+<a href="{{ path('adminCategoryList') }}">
+	<h1>Retourner a la liste des categories</h1>
+</a>

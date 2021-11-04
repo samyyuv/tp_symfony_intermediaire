@@ -1,0 +1,25 @@
+{{ form_start(productForm) }}
+{{ form_label(productForm, 'Nom du produit', { 'attr': {'class': 'form'} }) }}
+<br>
+{{ form_widget(productForm.name) }}
+
+{{ form_label(productForm, 'Description du produit', { 'attr': {'class': 'form'} }) }}
+<br>
+{{ form_widget(productForm.description) }}
+{{ form_label(productForm, 'Prix du produit', { 'attr': {'class': 'form'} }) }}
+<br>
+{{ form_widget(productForm.price) }}
+{{ form_label(productForm, 'Stock du produit', { 'attr': {'class': 'form'} }) }}
+<br>
+{{ form_widget(productForm.stock) }}
+{{ form_label(productForm, 'Categorie du produit', { 'attr': {'class': 'form'} }) }}
+<br>
+{{ form_widget(productForm.category) }}
+{{ form_widget(productForm.submit, { 'attr': {'class': 'border formfont'} }) }}
+
+{{ form_end(productForm) }}
+<br>
+
+<a href="{{ path('adminProductList') }}">
+	<h1>Retourner a la liste de produits</h1>
+</a>
