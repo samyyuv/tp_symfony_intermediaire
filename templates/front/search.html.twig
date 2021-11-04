@@ -1,0 +1,30 @@
+{% extends 'Front/home.html.twig' %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+	<link href="https://fonts.googleapis.com/css2?family=Zen+Antique&family=Spartan&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block main %}
+	<h2>La recherche à partir de :
+		{{ term }}</h2>
+	<br>
+	{% if products == false %}
+		<h2>Rien ne correspond à votre recherche</h2>
+	{% endif %}
+
+	{% for product in products %}
+		<h3>
+			{{product.name}}
+		</h3>
+		<p>{{product.description}}</p>
+		<h4>{{product.price}}
+			€</h4>
+		<h4>{{product.category.name}}</h4>
+		<hr>
+
+	{% endfor %}
+	<h3>
+		<a href="{{ path('home') }}">Retourner à Home</a>
+	</h3>
+{% endblock %}

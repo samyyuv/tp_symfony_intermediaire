@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		{% block stylesheets %}
+			<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+			<link href="https://fonts.googleapis.com/css2?family=Zen+Antique&family=Spartan&display=swap" rel="stylesheet">
+		{% endblock %}
+
+		{% block title %}
+			<title>Welcome!</title>
+		{% endblock %}
+
+	</head>
+	<body>
+
+		{% block header %}
+			<form action="{{ path('search') }}" method="get">
+				<input type="search" name="search" id="search">
+				<input type="submit" value="Rechercher">
+			</form>
+		{% endblock %}
+		<main class="container">
+			{% block main %}
+
+
+				<div class="flex">
+					<h3>
+						<a href="{{ path('productList') }} ">Liste de Produits</a>
+					</h3>
+
+					<h3>
+						<a href="{{ path('categoryList') }} ">Liste de Categories</a>
+					</h3>
+				</div>
+			{% endblock %}
+		</main>
+
+		{% block footer %}{% endblock %}
+
+	</body>
+</html>
